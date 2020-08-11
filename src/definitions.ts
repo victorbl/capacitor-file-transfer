@@ -5,5 +5,6 @@ declare module '@capacitor/core' {
 }
 
 export interface FileTransferPlugin {
-  download(options: {source: string, target: string}): Promise<void>;
+  downloadRelative(options: {source: string, target: string, refresh: boolean}): Promise<{url: string, path: string}>;
+  downloadAbsolute(options: {source: string, target: string, refresh: boolean}): Promise<{url: string, path: string}>;
 }
